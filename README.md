@@ -37,6 +37,25 @@ Project Layout :
       - exceptions              (Custom exceptions )
       - exchanges               (Classes which help in managing input/Output data)
       - io                      (Classes which are in contact with input files)    
-      - services                (messaging service is included in this folder)
+      - services                (SendMessage service is included in this folder)
       - Solution.java           (This is the main class of the project)
+
+
+Unit Tests source directory : src/test
+
+Directory Structure for Unit Tests : 
+- test
+  - resources
+  - unit testing
+    - dto
+      - KingdomTest
+      - SoutherosTest
+    - io
+      - ReadFileTest
+    - service
+      - SendMessagesTest
+
+
+
+
 
