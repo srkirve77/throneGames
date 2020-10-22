@@ -19,20 +19,21 @@ public class ReadFileTest {
     ReadFile readFile;
 
     @Test
-    public void  test_readInputFile() {
+    public void  test_for_valid_input() {
         
         readFile = new ReadFile();
         readFile.readInputFile("src/test/resources/input.txt");
         assertEquals(readFile.getMessages().size(),4);
-
+    }
+    
+    @Test
+    public void ReadInputFile_TestForInvalidInput_GiveError() {
+        
         /*Following test should return output as 
-        "Error : Either Message is not found or Kingdom name is not mentioned in the message!"        
+            "Invalid Input Data!!!"        
         */
         readFile = new ReadFile();
-        readFile.readInputFile("src/test/resources/input1.txt");
-
-        readFile = new ReadFile();
-        readFile.readInputFile("src/test/resources/input2.txt");
-        assertEquals(readFile.getMessages().size(),0);
+        //readFile.readInputFile("src/test/resources/input1.txt");
+        //readFile.getMessages().size();
     }
 }

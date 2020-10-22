@@ -23,7 +23,7 @@ public class SoutherosTest {
     Southeros southeros2;
 
     @Test
-    public void test_getInstance() {
+    public void getInstance_ShouldNotCreateMoreThanOneObject_returnSameObject() {
         southeros1 = Southeros.getInstance();
         southeros2 = Southeros.getInstance();
         assertTrue(southeros1.equals(southeros2));  /*if the reference is equal then 

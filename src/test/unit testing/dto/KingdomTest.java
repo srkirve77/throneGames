@@ -1,5 +1,4 @@
 import org.junit.jupiter.api.Test;
-import com.geektrust.tameofthrones.dto.Emblem;
 import com.geektrust.tameofthrones.dto.Kingdom;
 import java.util.Map;
 import java.util.HashMap;
@@ -28,34 +27,7 @@ public class KingdomTest {
     @BeforeEach
     public void init() {
         
-        this.kingdom1 = new Kingdom("SPACE",new Emblem("GORILLA"));
-        this.kingdom2 = new Kingdom("LAND",new Emblem("PANDA"));
-        this.kingdom3 = new Kingdom("ABC",new Emblem(""));
+        this.kingdom1 = new Kingdom("SPACE","GORILLA");
+        this.kingdom2 = new Kingdom("LAND","PANDA");
     }
-
-    @Test
-    void  test_hash_animalName(){
-
-        Map<Character,Integer> animalName_hashed = new HashMap<Character,Integer>();
-        Map<Character,Integer> test_hashed = new HashMap<Character,Integer>();
-        test_hashed.put('P',1);
-        test_hashed.put('A',2);
-        test_hashed.put('N',1);
-        test_hashed.put('D',1);
-        kingdom2.hash_animalName(animalName_hashed);
-        assertTrue(animalName_hashed.equals(test_hashed));
-
-        animalName_hashed.clear();
-        test_hashed.clear();
-        kingdom3.hash_animalName(animalName_hashed);
-        assertTrue(animalName_hashed.equals(test_hashed));
-    }
-
-    @Test
-    void test_ReceiveMessage() {
-        assertTrue(kingdom2.ReceiveMessage("FAIJWJSOOFAMAU"));
-        assertFalse(kingdom2.ReceiveMessage("PANDA"));
-        assertFalse(kingdom2.ReceiveMessage(""));
-    }
-
 }
