@@ -30,4 +30,8 @@ public class Kingdom {
 	public List<String> getAllies() {
 		return this.allies;
 	}	
+
+	public void addAlly(String kingdomName) {
+		this.allies.add(kingdomName);
+	}
 }

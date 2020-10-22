@@ -12,7 +12,7 @@ import com.geektrust.tameofthrones.dto.Kingdom;
  */
 public class Southeros {
 
-	private static Southeros single_instance = null;
+	private static Southeros singleInstance = null;
 	public Map<String,Kingdom> kingdoms;
 
 	private Southeros() {
@@ -20,11 +20,11 @@ public class Southeros {
 	}
 
 	public static Southeros getInstance() {
-		if(single_instance == null) {
-			single_instance = new Southeros();
+		if(singleInstance == null) {
+			singleInstance = new Southeros();
 		}
 
-		return single_instance;
+		return singleInstance;
 	}
 
 	/**

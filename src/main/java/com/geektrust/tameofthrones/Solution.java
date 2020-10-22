@@ -10,7 +10,7 @@ import com.geektrust.tameofthrones.dto.Kingdom;
 import com.geektrust.tameofthrones.dto.Southeros;
 import com.geektrust.tameofthrones.exchanges.GetMessage;
 import com.geektrust.tameofthrones.io.ReadFile;
-import com.geektrust.tameofthrones.service.alliance;
+import com.geektrust.tameofthrones.service.Alliance;
 import java.util.ArrayList;
 import java.util.LinkedHashSet;
 import java.util.List;
@@ -24,20 +24,19 @@ public class Solution {
 		 
 		ReadFile readFile = new ReadFile(); /*Read the input file */
 		readFile.readInputFile(args[0]);
-		LinkedHashSet <String> allies = new LinkedHashSet<String>(); 
 		List<GetMessage> getMessages = readFile.getMessages();
 		Kingdom space = southeros.kingdoms.get("SPACE");
 		for(int i = 0 ; i < getMessages.size() ; i++ )
 		{
-			alliance.updateAlliance(space,getMessages.get(i));
+			Alliance.updateAlliance(space,getMessages.get(i));
 		}
 		
 		/*if shan have allies more than half of the total no of kingdoms 
 						then He will win the southeros and we will print his ally kingdoms.	*/
 		if(space.getAllies().size()>2 ) 
 		{			
-			System.out.println("SPACE ");
-			for(String ally : allies) {
+			System.out.print("SPACE ");
+			for(String ally : space.getAllies()) {
 				System.out.print(ally + " ");
 			}	
 			System.out.println();
